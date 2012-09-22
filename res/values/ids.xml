@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item name="bt_Previous" type="id"></item>
+    <item name="bt_Play" type="id"></item>
+    <item name="bt_Next" type="id"></item>
+    <item name="bt_ShuffleToggle" type="id"></item>
+    <item name="bt_RepeatToggle" type="id"></item>
+    <item name="drag" type="id"></item>
+    <item name="playing_indicator" type="id"></item>
+    <item name="playlist" type="id"></item>
+    <item name="timerDisplay" type="id"></item>
+    <item name="currentSongTime" type="id"></item>
+    <item name="totalSongDuration" type="id"></item>
+    <item name="songSeekBar" type="id"></item>
+    <item name="tabs_nowplaying_list" type="id"></item>
+    <item name="pagers_nowplaying_list" type="id"></item>
+    <item name="tabs_musiccatalog" type="id"></item>
+    <item name="pagers_musiccatalog" type="id"></item>
+    <item name="list_albums" type="id"></item>
+    <item name="titleAlbum" type="id"></item>
+    <item name="moreinfo" type="id"></item>
+    <item name="album_art" type="id"></item>
+    <item name="opennote" type="id"></item>
+    <item name="titleArtist" type="id"></item>
+    <item name="list_artists" type="id"></item>
+    <item name="titleFolder" type="id"></item>
+    <item name="img_folder" type="id"></item>
+    <item name="list_folders" type="id"></item>
+    <item name="list_songs" type="id"></item>
+    <item name="titleSong" type="id"></item>
+    <item name="list_playlists" type="id"></item>
+    <item name="titlePlaylist" type="id"></item>
+    <item name="mc_control_nowplaying_Group" type="id"></item>
+    <item name="mc_controlGroup" type="id"></item>
+    <item name="playing_Title" type="id"></item>
+    <item name="playing_Artist" type="id"></item>
+    <item name="mc_pager_tabs" type="id"></item>
+    <item type="id" name="InfoGroup"/>
+    <item name="rl_prepareList" type="id"/>
+    <item name="placeholder_infocontrolgroup" type="id"/>
+    <item name="list" type="id"/>
+    <item name="placeholder_tabs_pager" type="id"/>
+
+</resources>

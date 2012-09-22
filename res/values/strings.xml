@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="app_name">NPL Simple Music Player</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Simple Music Player</string>
+    <string name="s_nowplaying">Now Playing</string>
+    <string name="s_playlist">Playlist</string>
+    <string name="s_tab_recents">Recent</string>
+    <string name="s_tab_artists">Artists</string>
+    <string name="s_tab_albums">Albums</string>
+    <string name="s_tab_folders">Folders</string>
+    <string name="s_tab_playlists">Playlists</string>
+    <string name="s_tab_songs">Songs</string>
+    <string name="title_activity_prepare_list">PrepareList</string>
+    <string name="info_shuffle_on">Shuffle ON</string>
+    <string name="info_shuffle_off">Shuffle OFF</string>
+    <string name="info_repeat_none">No repeat</string>
+    <string name="info_repeat_all">Repeat All</string>
+    <string name="info_repeat_one">Repeat One</string>
+
+</resources>

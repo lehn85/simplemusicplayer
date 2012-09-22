@@ -1,0 +1,51 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.npl.simplemusicplayer"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:icon="@drawable/ic_launcher_2"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainPlayer"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.npl.simplemusicplayer.MusicService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.npl.simplemusicplayer.TOGGLE_PLAYBACK" />
+                <action android:name="com.npl.simplemusicplayer.PLAY" />
+                <action android:name="com.npl.simplemusicplayer.PREVIOUS" />
+                <action android:name="com.npl.simplemusicplayer.NEXT" />
+                <action android:name="com.npl.simplemusicplayer.PAUSE" />
+                <action android:name="com.npl.simplemusicplayer.SEEK" />
+                <action android:name="com.npl.simplemusicplayer.SUPPLY_PLAYLIST" />
+                <action android:name="com.npl.simplemusicplayer.PLAY_SPECIFIC_SONG" />
+                <action android:name="com.npl.simplemusicplayer.REQUEST_STATUS" />
+                <action android:name="com.npl.simplemusicplayer.TOGGLE_REPEATMODE" />
+                <action android:name="com.npl.simplemusicplayer.TOGGLE_SHUFFLE" />
+                <action android:name="com.npl.simplemusicplayer.REORDER_PLAYLIST" />
+                <action android:name="com.npl.simplemusicplayer.SETUP_AS_FOREGROUND" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.npl.simplemusicplayer.MusicIntentReceiver" >
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
