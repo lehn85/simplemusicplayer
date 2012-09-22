@@ -91,7 +91,7 @@ public class MusicService extends Service implements OnPreparedListener, OnCompl
 
 	// Notification
 	private NotificationHelper mNotificationHelper;
-	
+
 	// Error continue
 	private int mAttempCount = 0;
 
@@ -119,11 +119,11 @@ public class MusicService extends Service implements OnPreparedListener, OnCompl
 	public IBinder onBind(Intent intent) {
 		return null;
 	}
-	
+
 	public static PlaylistManager getPlaylistManager() {
 		return mPlaylistMgr;
 	}
-	
+
 	public static MediaPlayerState getState() {
 		return mState;
 	}
@@ -269,7 +269,8 @@ public class MusicService extends Service implements OnPreparedListener, OnCompl
 		Log.i(TAG, "onPrepared");
 		// set state to playing, even if lost audio focus
 		mState = MediaPlayerState.Playing;
-		// if lost audio focus, then not playing, but pending by setting the state to playing
+		// if lost audio focus, then not playing, but pending by setting the
+		// state to playing
 		// when regain focus, it will be played
 		if (mAudioFocusHelper.getLastFocusChange() != AudioManager.AUDIOFOCUS_GAIN
 				&& mAudioFocusHelper.getLastFocusChange() != AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK)
@@ -280,19 +281,20 @@ public class MusicService extends Service implements OnPreparedListener, OnCompl
 	}
 
 	public boolean onError(MediaPlayer mp, int what, int extra) {
-		Toast.makeText(getApplicationContext(), "Error playing! Trying next song. ", Toast.LENGTH_SHORT).show();
 		Log.e(TAG, "Error: what=" + String.valueOf(what) + ", extra=" + String.valueOf(extra));
 
 		mState = MediaPlayerState.Stopped;
 		relaxResources(true);
-		
-		if (mAttempCount<2) {
-			mAttempCount+=1;
+
+		if (mAttempCount < 2) {
+			mAttempCount += 1;
+			Toast.makeText(getApplicationContext(), "Error playing! Trying next song. ", Toast.LENGTH_SHORT).show();
 			processPlayRequest(); // attempt to play next song
 		} else { // reset and do nothing
-			mAttempCount = 0; 
+			Toast.makeText(getApplicationContext(), "Error! Stop. ", Toast.LENGTH_SHORT).show();
+			mAttempCount = 0;
 		}
-		
+
 		return true;
 	}
 
