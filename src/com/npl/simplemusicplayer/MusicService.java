@@ -2,6 +2,7 @@ package com.npl.simplemusicplayer;
 
 import java.util.ArrayList;
 
+import android.support.v4.app.NotificationCompat;
 import com.npl.simplemusicplayer.MusicCatalogLoader.SongItem;
 import com.npl.simplemusicplayer.PlaylistManager.RepeatMode;
 
@@ -23,7 +24,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -84,6 +84,9 @@ public class MusicService extends Service implements OnPreparedListener, OnCompl
 
 	// Handler xu ly cap nhat timer
 	private Handler mHandler;
+	private int mUpdateInterval = 500; // 1000ms update interval
+//	private int mPausedTime = 0;
+//	private int mPausedTimeThreshold = (int) ((1000.0 / ((double) mUpdateInterval)) * 60);
 
 	// Audio focus helper
 	private AudioFocusHelper mAudioFocusHelper;
@@ -434,7 +437,7 @@ public class MusicService extends Service implements OnPreparedListener, OnCompl
 	}
 
 	private void startUpdatePlaytime() {
-		mHandler.postDelayed(mUpdateTimeTask, 200);
+		mHandler.postDelayed(mUpdateTimeTask, mUpdateInterval);
 	}
 
 	private void stopUpdatePlaytime() {
@@ -445,7 +448,7 @@ public class MusicService extends Service implements OnPreparedListener, OnCompl
 
 		public void run() {
 			sendStatus(STATUS_BC_PLAYTIME);
-			mHandler.postDelayed(mUpdateTimeTask, 200);
+			mHandler.postDelayed(mUpdateTimeTask, mUpdateInterval);
 		}
 	};
 

@@ -143,6 +143,12 @@ public class MainPlayer extends Activity {
 
 		unregisterReceiver(mStatusReceiver);
 		savePreferences();
+		
+		if (MusicService.getState() != MediaPlayerState.Playing) {
+			Intent i = new Intent();
+			i.setClass(this, MusicService.class);
+			stopService(i);
+		}
 
 		super.onPause();
 	}
