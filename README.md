@@ -1,4 +1,6 @@
 LeMusicPlayer
 =============
 
-Sample music player
+Simple music player
+
+My first android app.
